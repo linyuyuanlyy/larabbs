@@ -155,4 +155,7 @@ class AuthorizationsController extends Controller
 		return $this->respondWithToken($token)->setStatusCode(201);
 	}
 
+
+
+
 }
