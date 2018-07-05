@@ -26,6 +26,10 @@ $api->version('v1', [
 		$api->post('verificationCodes', 'VerificationCodesController@store')->name('api.verificationCodes.store');//短信验证码
 		$api->post('users', 'UsersController@store')->name('api.users.store');//用户注册
 		$api->post('captchas', 'CaptchasController@store')->name('api.captchas.store');//图片验证码
+		$api->post('socials/{social_type}/authorizations', 'AuthorizationsController@socialStore')->name('api.socials.authorizations.store');//第三方登录
+		$api->post('authorizations', 'AuthorizationsController@store')->name('api.authorizations.store');//登录
+		$api->put('authorizations/current', 'AuthorizationsController@update')->name('api.authorizations.update');//刷新token
+		$api->delete('authorizations/current', 'AuthorizationsController@destory')->name('api.authorizations.destroy');//删除token
 	});
 
 });
